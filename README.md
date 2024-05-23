@@ -2,24 +2,12 @@
 
 Este proyecto implementa diferentes métodos para resolver sistemas de ecuaciones lineales y está estructurado de la siguiente manera:
 
-## Estructura del Proyecto
 
---solucionador
-│ ├── gauss_elimination.py
-│ ├── lu_factorization.py
-│ ├── iterative_methods.py
-│ └── main.py
-├── tests
-│ ├── test_gauss.py
-│ ├── test_lu.py
-│ └── test_iterative.py
-└── README.md
-
-# gauss_elimination.py
+## Gauss eliminacion
 
 Este módulo contiene la implementación del método de eliminación gaussiana para resolver sistemas de ecuaciones lineales.
 
-## Función
+### Función
 
 ### `gauss_elimination(A, b)`
 
@@ -32,11 +20,11 @@ Resuelve el sistema de ecuaciones lineales Ax = b utilizando eliminación gaussi
 - **Retorna**:
   - `np.ndarray`: Vector de soluciones x.
 
-# lu_factorization.py
+## LU Factorizacion
 
 Este módulo contiene la implementación del método de factorización LU para resolver sistemas de ecuaciones lineales.
 
-## Funciones
+### Funciones
 
 ### `lu_factorization(A)`
 
@@ -61,11 +49,11 @@ Resuelve el sistema de ecuaciones LUx = b usando la factorización LU.
 - **Retorna**:
   - `np.ndarray`: Vector de soluciones x.
 
-# iterative_methods.py
+## Iterative Methods
 
 Este módulo contiene la implementación de métodos iterativos para resolver sistemas de ecuaciones lineales.
 
-## Función
+### Función
 
 ### `gauss_seidel(A, b, tol=1e-10, max_iterations=1000)`
 
@@ -80,11 +68,11 @@ Resuelve el sistema de ecuaciones Ax = b usando el método iterativo de Gauss-Se
 - **Retorna**:
   - `np.ndarray`: Vector de soluciones x.
 
-# main.py
+## Main
 
 Este módulo contiene la función principal del proyecto, la cual muestra ejemplos de uso de los diferentes métodos para resolver sistemas de ecuaciones lineales.
 
-## Uso
+### Uso
 
 El archivo `main.py` importa las funciones de los otros módulos y resuelve un ejemplo de sistema de ecuaciones utilizando los métodos de eliminación gaussiana, factorización LU y Gauss-Seidel.
 
@@ -99,11 +87,11 @@ python main.py
 ### `/solucionador/tests/test_gauss.py`
 
 ```markdown
-# test_gauss.py
+## Test gauss
 
 Este módulo contiene pruebas unitarias para el método de eliminación gaussiana.
 
-## Clase
+### Clase
 
 ### `TestGaussElimination`
 
@@ -113,11 +101,11 @@ Prueba la función `gauss_elimination`.
   - `test_gauss_elimination`: Verifica que la solución de un sistema de ecuaciones utilizando eliminación gaussiana es correcta.
 
 
-# test_lu.py
+## Test LU
 
 Este módulo contiene pruebas unitarias para el método de factorización LU.
 
-## Clase
+### Clase
 
 ### `TestLUFactorization`
 
@@ -126,11 +114,11 @@ Prueba las funciones `lu_factorization` y `lu_solve`.
 - **Métodos**:
   - `test_lu_factorization`: Verifica que la solución de un sistema de ecuaciones utilizando factorización LU es correcta.
 
-# test_iterative.py
+## Test Iterative
 
 Este módulo contiene pruebas unitarias para el método iterativo de Gauss-Seidel.
 
-## Clase
+### Clase
 
 ### `TestIterativeMethods`
 
