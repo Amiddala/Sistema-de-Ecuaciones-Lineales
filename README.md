@@ -83,10 +83,6 @@ Para ejecutar el archivo y ver los resultados:
 ``bash
 python main.py
 
-
-### `/solucionador/tests/test_gauss.py`
-
-```markdown
 ## Test gauss
 
 Este módulo contiene pruebas unitarias para el método de eliminación gaussiana.
