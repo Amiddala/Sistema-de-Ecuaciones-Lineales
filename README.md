@@ -1,180 +1,82 @@
 # Solucionador de Sistemas de Ecuaciones Lineales
 
-Este proyecto implementa diferentes métodos para resolver sistemas de ecuaciones lineales y está estructurado de la siguiente manera:
+## Introducción
 
+El objetivo de este proyecto es desarrollar una herramienta para resolver sistemas de ecuaciones lineales utilizando diferentes métodos. Los métodos implementados incluyen la eliminación gaussiana, la factorización LU y varios métodos iterativos. Este proyecto se ha estructurado cuidadosamente para asegurar que sea escalable, fácil de mantener y extensible para futuras mejoras.
 
-## Gauss eliminacion
+## Metas
 
-Este módulo contiene la implementación del método de eliminación gaussiana para resolver sistemas de ecuaciones lineales.
+1. **Implementación del Solucionador de Sistemas de Ecuaciones Lineales:**
+   - Desarrollar un programa que acepte sistemas de ecuaciones lineales y los resuelva utilizando métodos como la eliminación gaussiana, la factorización LU y métodos iterativos.
+   - Crear funciones específicas para cada método de resolución.
+   - Garantizar que el programa sea capaz de manejar sistemas de ecuaciones de cualquier tamaño y proporcione soluciones precisas.
 
-### Función
+2. **Uso de GitHub y Git para la Gestión del Proyecto:**
+   - Crear un repositorio en GitHub para alojar el código fuente.
+   - Utilizar Git para el control de versiones.
+   - Facilitar la colaboración y el seguimiento del progreso del proyecto mediante las funciones de GitHub como issues y pull requests.
 
-### `gauss_elimination(A, b)`
+## Desarrollo del Proyecto
 
-Resuelve el sistema de ecuaciones lineales Ax = b utilizando eliminación gaussiana.
+### Preparación del Entorno
 
-- **Argumentos**:
-  - `A (np.ndarray)`: Matriz de coeficientes.
-  - `b (np.ndarray)`: Vector de términos independientes.
+1. **Configurar el entorno de desarrollo:**
+   - Instalar Python.
+   - Crear un entorno virtual para el proyecto.
+   - Instalar las bibliotecas necesarias como NumPy y SciPy.
 
-- **Retorna**:
-  - `np.ndarray`: Vector de soluciones x.
+2. **Crear un repositorio en GitHub:**
+   - Crear un nuevo repositorio en GitHub.
+   - Clonar el repositorio en la máquina local.
+   - Configurar Git en el proyecto local.
 
-## LU Factorizacion
+### Implementación del Solucionador de Sistemas de Ecuaciones Lineales
 
-Este módulo contiene la implementación del método de factorización LU para resolver sistemas de ecuaciones lineales.
+1. **Definir la estructura del proyecto:**
+   - Crear un directorio para el proyecto.
+   - Dentro del directorio, crear un archivo principal (`main.py`) y un directorio para las funciones de resolución (`solvers`).
 
-### Funciones
+2. **Implementación de los métodos de resolución:**
+   - Implementar la eliminación gaussiana en un archivo llamado `gaussian_elimination.py`.
+   - Implementar la factorización LU en un archivo llamado `lu_decomposition.py`.
+   - Implementar los métodos iterativos (Jacobi, Gauss-Seidel) en un archivo llamado `iterative_methods.py`.
 
-### `lu_factorization(A)`
+3. **Crear una función principal para aceptar y resolver sistemas de ecuaciones:**
+   - En el archivo `main.py`, importar las funciones de resolución y proporcionar ejemplos de uso para cada método.
 
-Factoriza la matriz A en L y U tal que A = LU.
+### Pruebas y Depuración
 
-- **Argumentos**:
-  - `A (np.ndarray)`: Matriz de coeficientes.
+1. **Escribir pruebas unitarias para cada método:**
+   - Crear un directorio `tests`.
+   - Escribir pruebas para cada método de resolución utilizando un framework de pruebas como `unittest` o `pytest`.
 
-- **Retorna**:
-  - `L (np.ndarray)`: Matriz triangular inferior.
-  - `U (np.ndarray)`: Matriz triangular superior.
+2. **Ejecutar las pruebas y corregir errores:**
+   - Ejecutar las pruebas unitarias y realizar depuración según sea necesario para asegurar que cada método funcione correctamente.
 
-### `lu_solve(L, U, b)`
+### Gestión de Versiones y Colaboración
 
-Resuelve el sistema de ecuaciones LUx = b usando la factorización LU.
+1. **Uso de Git para control de versiones:**
+   - Realizar commits regulares para documentar los cambios en el código.
+   - Push de los cambios al repositorio remoto en GitHub.
 
-- **Argumentos**:
-  - `L (np.ndarray)`: Matriz triangular inferior.
-  - `U (np.ndarray)`: Matriz triangular superior.
-  - `b (np.ndarray)`: Vector de términos independientes.
+2. **Colaboración en GitHub:**
+   - Utilizar issues para gestionar tareas, errores y sugerencias de mejora.
+   - Crear pull requests para revisar y fusionar cambios en el código.
 
-- **Retorna**:
-  - `np.ndarray`: Vector de soluciones x.
+3. **Documentación:**
+   - Documentar cada función con docstrings.
+   - Crear un archivo `README.md` con instrucciones de uso y detalles del proyecto.
 
-## Iterative Methods
+### Conclusiones
 
-Este módulo contiene la implementación de métodos iterativos para resolver sistemas de ecuaciones lineales.
-
-### Función
-
-### `gauss_seidel(A, b, tol=1e-10, max_iterations=1000)`
-
-Resuelve el sistema de ecuaciones Ax = b usando el método iterativo de Gauss-Seidel.
-
-- **Argumentos**:
-  - `A (np.ndarray)`: Matriz de coeficientes.
-  - `b (np.ndarray)`: Vector de términos independientes.
-  - `tol (float)`: Tolerancia para la convergencia.
-  - `max_iterations (int)`: Número máximo de iteraciones.
-
-- **Retorna**:
-  - `np.ndarray`: Vector de soluciones x.
-
-## Main
-
-Este módulo contiene la función principal del proyecto, la cual muestra ejemplos de uso de los diferentes métodos para resolver sistemas de ecuaciones lineales.
-
-### Uso
-
-El archivo `main.py` importa las funciones de los otros módulos y resuelve un ejemplo de sistema de ecuaciones utilizando los métodos de eliminación gaussiana, factorización LU y Gauss-Seidel.
-
-### Ejemplo de ejecución
-
-Para ejecutar el archivo y ver los resultados:
-
-``bash
-python main.py
-
-## Test gauss
-
-Este módulo contiene pruebas unitarias para el método de eliminación gaussiana.
-
-### Clase
-
-### `TestGaussElimination`
-
-Prueba la función `gauss_elimination`.
-
-- **Métodos**:
-  - `test_gauss_elimination`: Verifica que la solución de un sistema de ecuaciones utilizando eliminación gaussiana es correcta.
-
-
-## Test LU
-
-Este módulo contiene pruebas unitarias para el método de factorización LU.
-
-### Clase
-
-### `TestLUFactorization`
-
-Prueba las funciones `lu_factorization` y `lu_solve`.
-
-- **Métodos**:
-  - `test_lu_factorization`: Verifica que la solución de un sistema de ecuaciones utilizando factorización LU es correcta.
-
-## Test Iterative
-
-Este módulo contiene pruebas unitarias para el método iterativo de Gauss-Seidel.
-
-### Clase
-
-### `TestIterativeMethods`
-
-Prueba la función `gauss_seidel`.
-
-- **Métodos**:
-  - `test_gauss_seidel`: Verifica que la solución de un sistema de ecuaciones utilizando Gauss-Seidel es correcta.
-
-
-## Requisitos
-
-- Python 3.x
-- NumPy
-
-## Instrucciones
-
-1. Clona el repositorio.
-2. Instala las dependencias.
-3. Ejecuta el archivo `main.py` para ver ejemplos de uso.
-4. Ejecuta los tests para verificar la correcta implementación de los métodos.
+Este proyecto ha resultado en la creación de una herramienta robusta para resolver sistemas de ecuaciones lineales utilizando múltiples métodos. A través de la implementación de una estructura de proyecto clara y el uso de Git y GitHub para la gestión de versiones y la colaboración, se ha asegurado que el proyecto sea fácil de mantener y extender en el futuro. Este enfoque garantiza una gestión eficiente del desarrollo del proyecto y facilita la colaboración y el mantenimiento a largo plazo.
 
 ## Métodos Implementados
+- Eliminación Gaussiana
+- Factorización LU
+- Métodos Iterativos (Jacobi, Gauss-Seidel)
 
-- **Eliminación Gaussiana**: Resuelve sistemas de ecuaciones lineales usando eliminación gaussiana.
-- **Factorización LU**: Factoriza una matriz
-
-# Resumen de Álgebra Lineal
-
-El álgebra lineal es una rama de las matemáticas que estudia los vectores, las matrices y las transformaciones lineales. Es fundamental en muchas áreas de las matemáticas y la ciencia aplicada, incluyendo la ingeniería, la física, la economía y la informática.
-
-## Conceptos Clave
-
-### Vectores y Espacios Vectoriales
-
-Un vector es un objeto que tiene magnitud y dirección. En el contexto del álgebra lineal, los vectores se representan como elementos de un espacio vectorial, que es un conjunto de vectores que pueden sumarse entre sí y multiplicarse por escalares (números).
-
-### Matrices
-
-Una matriz es una tabla rectangular de números dispuestos en filas y columnas. Las matrices se utilizan para representar sistemas de ecuaciones lineales, transformaciones lineales y muchas otras aplicaciones. Las operaciones básicas con matrices incluyen la suma, la multiplicación y la transposición.
-
-### Sistemas de Ecuaciones Lineales
-
-Un sistema de ecuaciones lineales es un conjunto de ecuaciones lineales que se resuelven simultáneamente. Estos sistemas pueden representarse en forma matricial como Ax = b, donde A es una matriz de coeficientes, x es un vector de incógnitas y b es un vector de términos independientes.
-
-### Transformaciones Lineales
-
-Una transformación lineal es una función que toma un vector como entrada y produce otro vector como salida, preservando la operación de suma y multiplicación por escalares. Las transformaciones lineales se pueden representar mediante matrices.
-
-### Determinantes y Valores Propios
-
-El determinante es un escalar que se puede calcular a partir de una matriz cuadrada y proporciona información sobre las propiedades de la matriz, como si es invertible. Los valores propios y los vectores propios son conceptos que describen cómo las transformaciones lineales cambian los vectores.
-
-## Aplicaciones
-
-El álgebra lineal tiene numerosas aplicaciones prácticas, tales como:
-
-- **Resolución de sistemas de ecuaciones lineales**: Encontrar soluciones para sistemas de ecuaciones en ingeniería y ciencias.
-- **Gráficos por computadora**: Manipulación de imágenes y animaciones.
-- **Análisis de datos**: Métodos de regresión y reducción de dimensionalidad.
-- **Mecánica cuántica**: Descripción de estados y operadores cuánticos.
-- **Economía**: Modelos de equilibrio y optimización.
-
-Este resumen cubre los conceptos básicos del álgebra lineal que son esenciales para comprender y utilizar los métodos implementados en este proyecto.
+## Uso
+Ejecute `main.py` para ver un ejemplo de uso:
+```bash
+python main.py
