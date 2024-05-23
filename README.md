@@ -2,81 +2,91 @@
 
 ## Introducción
 
-El objetivo de este proyecto es desarrollar una herramienta para resolver sistemas de ecuaciones lineales utilizando diferentes métodos. Los métodos implementados incluyen la eliminación gaussiana, la factorización LU y varios métodos iterativos. Este proyecto se ha estructurado cuidadosamente para asegurar que sea escalable, fácil de mantener y extensible para futuras mejoras.
+El álgebra lineal es una rama fundamental de las matemáticas con aplicaciones en numerosas disciplinas, incluyendo la ingeniería, la física, la economía y la informática. Entre las muchas herramientas y técnicas del álgebra lineal, la capacidad de resolver sistemas de ecuaciones lineales es particularmente importante. Este proyecto se centra en el desarrollo de un programa que puede resolver sistemas de ecuaciones lineales utilizando varios métodos avanzados.
 
-## Metas
+## Objetivo del Proyecto
 
-1. **Implementación del Solucionador de Sistemas de Ecuaciones Lineales:**
-   - Desarrollar un programa que acepte sistemas de ecuaciones lineales y los resuelva utilizando métodos como la eliminación gaussiana, la factorización LU y métodos iterativos.
-   - Crear funciones específicas para cada método de resolución.
-   - Garantizar que el programa sea capaz de manejar sistemas de ecuaciones de cualquier tamaño y proporcione soluciones precisas.
+El objetivo principal de este proyecto es crear un solucionador de sistemas de ecuaciones lineales que sea:
 
-2. **Uso de GitHub y Git para la Gestión del Proyecto:**
-   - Crear un repositorio en GitHub para alojar el código fuente.
-   - Utilizar Git para el control de versiones.
-   - Facilitar la colaboración y el seguimiento del progreso del proyecto mediante las funciones de GitHub como issues y pull requests.
+- **Preciso**: Capaz de proporcionar soluciones exactas para sistemas de cualquier tamaño.
+- **Flexible**: Implementar múltiples métodos de resolución para adaptarse a diferentes tipos de sistemas y condiciones.
+- **Eficiente**: Utilizar algoritmos y bibliotecas optimizadas para garantizar un rendimiento rápido y eficiente.
 
-## Desarrollo del Proyecto
+## Metas del Proyecto
 
-### Preparación del Entorno
-
-1. **Configurar el entorno de desarrollo:**
-   - Instalar Python.
-   - Crear un entorno virtual para el proyecto.
-   - Instalar las bibliotecas necesarias como NumPy y SciPy.
-
-2. **Crear un repositorio en GitHub:**
-   - Crear un nuevo repositorio en GitHub.
-   - Clonar el repositorio en la máquina local.
-   - Configurar Git en el proyecto local.
+Para alcanzar este objetivo, hemos establecido las siguientes metas específicas:
 
 ### Implementación del Solucionador de Sistemas de Ecuaciones Lineales
 
-1. **Definir la estructura del proyecto:**
-   - Crear un directorio para el proyecto.
-   - Dentro del directorio, crear un archivo principal (`main.py`) y un directorio para las funciones de resolución (`solvers`).
+1. **Desarrollo de Métodos de Resolución**:
+   - **Eliminación Gaussiana**: Implementación de un algoritmo clásico para resolver sistemas de ecuaciones mediante la reducción de la matriz a una forma escalonada.
+   - **Factorización LU**: Descomposición de la matriz en dos matrices triangulares (L y U) para simplificar la resolución del sistema.
+   - **Métodos Iterativos**: Implementación de métodos como Jacobi y Gauss-Seidel, adecuados para sistemas grandes y dispersos.
 
-2. **Implementación de los métodos de resolución:**
-   - Implementar la eliminación gaussiana en un archivo llamado `gaussian_elimination.py`.
-   - Implementar la factorización LU en un archivo llamado `lu_decomposition.py`.
-   - Implementar los métodos iterativos (Jacobi, Gauss-Seidel) en un archivo llamado `iterative_methods.py`.
+2. **Funciones Específicas para Cada Método**:
+   - Desarrollar funciones dedicadas para cada método de resolución, garantizando modularidad y claridad en el código.
 
-3. **Crear una función principal para aceptar y resolver sistemas de ecuaciones:**
-   - En el archivo `main.py`, importar las funciones de resolución y proporcionar ejemplos de uso para cada método.
+3. **Manejo de Sistemas de Cualquier Tamaño**:
+   - Asegurar que el programa pueda manejar sistemas de ecuaciones de cualquier tamaño, desde pequeños hasta muy grandes, utilizando estructuras de datos dinámicas y matrices de tamaño variable.
 
 ### Pruebas y Depuración
 
-1. **Escribir pruebas unitarias para cada método:**
-   - Crear un directorio `tests`.
-   - Escribir pruebas para cada método de resolución utilizando un framework de pruebas como `unittest` o `pytest`.
+1. **Pruebas Exhaustivas**:
+   - Realizar pruebas exhaustivas del solucionador utilizando sistemas de ecuaciones de diferentes tamaños y complejidades para asegurar la precisión y la fiabilidad de los resultados.
 
-2. **Ejecutar las pruebas y corregir errores:**
-   - Ejecutar las pruebas unitarias y realizar depuración según sea necesario para asegurar que cada método funcione correctamente.
+2. **Identificación y Corrección de Errores**:
+   - Identificar y corregir cualquier error o comportamiento inesperado a través de un riguroso proceso de depuración y pruebas unitarias.
 
-### Gestión de Versiones y Colaboración
+## Metodología
 
-1. **Uso de Git para control de versiones:**
-   - Realizar commits regulares para documentar los cambios en el código.
-   - Push de los cambios al repositorio remoto en GitHub.
+### Desarrollo del Solucionador
 
-2. **Colaboración en GitHub:**
-   - Utilizar issues para gestionar tareas, errores y sugerencias de mejora.
-   - Crear pull requests para revisar y fusionar cambios en el código.
+#### Eliminación Gaussiana
 
-3. **Documentación:**
-   - Documentar cada función con docstrings.
-   - Crear un archivo `README.md` con instrucciones de uso y detalles del proyecto.
+La eliminación gaussiana es un método clásico en el álgebra lineal para resolver sistemas de ecuaciones lineales. Este método involucra la transformación de la matriz del sistema a una forma triangular, de manera que se pueda resolver fácilmente mediante sustitución hacia atrás.
 
-### Conclusiones
+#### Factorización LU
 
-Este proyecto ha resultado en la creación de una herramienta robusta para resolver sistemas de ecuaciones lineales utilizando múltiples métodos. A través de la implementación de una estructura de proyecto clara y el uso de Git y GitHub para la gestión de versiones y la colaboración, se ha asegurado que el proyecto sea fácil de mantener y extender en el futuro. Este enfoque garantiza una gestión eficiente del desarrollo del proyecto y facilita la colaboración y el mantenimiento a largo plazo.
+La factorización LU es una técnica que descompone una matriz en el producto de una matriz triangular inferior (L) y una matriz triangular superior (U). Esta descomposición facilita la solución de sistemas de ecuaciones, así como el cálculo de determinantes y la inversión de matrices.
 
-## Métodos Implementados
-- Eliminación Gaussiana
-- Factorización LU
-- Métodos Iterativos (Jacobi, Gauss-Seidel)
+#### Métodos Iterativos
 
-## Uso
-Ejecute `main.py` para ver un ejemplo de uso:
+Los métodos iterativos, como Jacobi y Gauss-Seidel, son especialmente útiles para sistemas grandes y dispersos. Estos métodos proporcionan aproximaciones sucesivas a la solución, mejorando iterativamente hasta alcanzar un nivel de precisión deseado.
+
+### Implementación Técnica
+
+Para la implementación de estos métodos, se ha utilizado Python junto con bibliotecas de álgebra lineal como NumPy y SciPy. Estas bibliotecas ofrecen funciones optimizadas y eficientes para operaciones matriciales, lo que facilita la implementación y mejora el rendimiento del solucionador.
+
+## Pruebas y Validación
+
+### Pruebas Unitarias
+
+Se han desarrollado pruebas unitarias para cada método de resolución, asegurando que cada función se comporte correctamente bajo una variedad de condiciones. Las pruebas unitarias se implementaron utilizando el framework `unittest` de Python.
+
+### Pruebas de Integración
+
+Además de las pruebas unitarias, se realizaron pruebas de integración para garantizar que todos los componentes del solucionador funcionen juntos de manera coherente y eficiente.
+
+## Uso del Solucionador
+
+### Ejecución del Programa
+
+El programa principal (`main.py`) permite al usuario introducir un sistema de ecuaciones lineales y seleccionar el método de resolución deseado. A continuación se muestra un ejemplo de cómo ejecutar el programa:
+
+### Métodos Disponibles
+
+El programa incluye los siguientes métodos de resolución:
+
+- **Eliminación Gaussiana**
+- **Factorización LU**
+- **Método de Jacobi**
+- **Método de Gauss-Seidel**
+
+Cada uno de estos métodos puede ser seleccionado y ejecutado desde la interfaz del programa, proporcionando una solución precisa al sistema de ecuaciones ingresado.
+
+## Conclusiones
+
+Este proyecto ha desarrollado un solucionador robusto y eficiente para sistemas de ecuaciones lineales, implementando varios métodos avanzados de resolución. A través del uso de Python y bibliotecas especializadas, hemos asegurado la precisión, flexibilidad y eficiencia del solucionador. El uso de GitHub y Git ha facilitado la gestión del proyecto, permitiendo una colaboración efectiva y un control de versiones detallado.
+
 ```bash
 python main.py
