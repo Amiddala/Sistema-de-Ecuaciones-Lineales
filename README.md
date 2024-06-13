@@ -1,92 +1,69 @@
-# Solucionador de Sistemas de Ecuaciones Lineales
+# Proyecto de Álgebra Lineal
 
-## Introducción
+Este proyecto contiene tres implementaciones clave de algoritmos de álgebra lineal:
 
-El álgebra lineal es una rama fundamental de las matemáticas con aplicaciones en numerosas disciplinas, incluyendo la ingeniería, la física, la economía y la informática. Entre las muchas herramientas y técnicas del álgebra lineal, la capacidad de resolver sistemas de ecuaciones lineales es particularmente importante. Este proyecto se centra en el desarrollo de un programa que puede resolver sistemas de ecuaciones lineales utilizando varios métodos avanzados.
+1. **Cálculo de la Determinante por el Método de Cofactores**
+2. **Inversa de una Matriz usando el Método de Gauss-Jordan**
+3. **Descomposición LU de una Matriz**
 
-## Objetivo del Proyecto
+## Descripción
 
-El objetivo principal de este proyecto es crear un solucionador de sistemas de ecuaciones lineales que sea:
+Este proyecto está diseñado para realizar cálculos esenciales en álgebra lineal utilizando el lenguaje de programación C++. Cada funcionalidad se implementa en un archivo separado para una mejor organización y facilidad de uso.
 
-- **Preciso**: Capaz de proporcionar soluciones exactas para sistemas de cualquier tamaño.
-- **Flexible**: Implementar múltiples métodos de resolución para adaptarse a diferentes tipos de sistemas y condiciones.
-- **Eficiente**: Utilizar algoritmos y bibliotecas optimizadas para garantizar un rendimiento rápido y eficiente.
+### 1. Cálculo de la Determinante por el Método de Cofactores
 
-## Metas del Proyecto
+Este programa calcula la determinante de una matriz cuadrada utilizando el método de cofactores. El usuario ingresa el tamaño de la matriz y sus elementos, y el programa devuelve la determinante de la matriz.
 
-Para alcanzar este objetivo, hemos establecido las siguientes metas específicas:
+### 2. Inversa de una Matriz usando el Método de Gauss-Jordan
 
-### Implementación del Solucionador de Sistemas de Ecuaciones Lineales
+Este programa encuentra la inversa de una matriz cuadrada mediante el método de eliminación de Gauss-Jordan. El usuario ingresa la matriz y, si es invertible, el programa devuelve su inversa.
 
-1. **Desarrollo de Métodos de Resolución**:
-   - **Eliminación Gaussiana**: Implementación de un algoritmo clásico para resolver sistemas de ecuaciones mediante la reducción de la matriz a una forma escalonada.
-   - **Factorización LU**: Descomposición de la matriz en dos matrices triangulares (L y U) para simplificar la resolución del sistema.
-   - **Métodos Iterativos**: Implementación de métodos como Jacobi y Gauss-Seidel, adecuados para sistemas grandes y dispersos.
+### 3. Descomposición LU de una Matriz
 
-2. **Funciones Específicas para Cada Método**:
-   - Desarrollar funciones dedicadas para cada método de resolución, garantizando modularidad y claridad en el código.
+Este programa descompone una matriz cuadrada en dos matrices, L (inferior) y U (superior), tales que `A = L * U`. La descomposición LU es útil para resolver sistemas de ecuaciones lineales y calcular determinantes y matrices inversas.
 
-3. **Manejo de Sistemas de Cualquier Tamaño**:
-   - Asegurar que el programa pueda manejar sistemas de ecuaciones de cualquier tamaño, desde pequeños hasta muy grandes, utilizando estructuras de datos dinámicas y matrices de tamaño variable.
+## Estructura del Proyecto
 
-### Pruebas y Depuración
+El proyecto contiene los siguientes archivos:
 
-1. **Pruebas Exhaustivas**:
-   - Realizar pruebas exhaustivas del solucionador utilizando sistemas de ecuaciones de diferentes tamaños y complejidades para asegurar la precisión y la fiabilidad de los resultados.
+- `determinante_cofactores.cpp`: Código para calcular la determinante por el método de cofactores.
+- `inversa_gauss_jordan.cpp`: Código para calcular la inversa de una matriz usando Gauss-Jordan.
+- `descomposicion_lu.cpp`: Código para realizar la descomposición LU de una matriz.
+- `README.md`: Este archivo, que proporciona una descripción del proyecto y cómo utilizar los programas.
 
-2. **Identificación y Corrección de Errores**:
-   - Identificar y corregir cualquier error o comportamiento inesperado a través de un riguroso proceso de depuración y pruebas unitarias.
+## Cómo Utilizar
 
-## Metodología
+### Requisitos
 
-### Desarrollo del Solucionador
+- Un compilador de C++, como `g++`.
 
-#### Eliminación Gaussiana
+### Compilación y Ejecución
 
-La eliminación gaussiana es un método clásico en el álgebra lineal para resolver sistemas de ecuaciones lineales. Este método involucra la transformación de la matriz del sistema a una forma triangular, de manera que se pueda resolver fácilmente mediante sustitución hacia atrás.
+Para compilar y ejecutar cada programa, siga estos pasos:
 
-#### Factorización LU
+1. **Cálculo de la Determinante por el Método de Cofactores**:
 
-La factorización LU es una técnica que descompone una matriz en el producto de una matriz triangular inferior (L) y una matriz triangular superior (U). Esta descomposición facilita la solución de sistemas de ecuaciones, así como el cálculo de determinantes y la inversión de matrices.
+   g++ -o determinante_cof determinante_cof.cpp
+   ./determinante_cof
 
-#### Métodos Iterativos
-
-Los métodos iterativos, como Jacobi y Gauss-Seidel, son especialmente útiles para sistemas grandes y dispersos. Estos métodos proporcionan aproximaciones sucesivas a la solución, mejorando iterativamente hasta alcanzar un nivel de precisión deseado.
-
-### Implementación Técnica
-
-Para la implementación de estos métodos, se ha utilizado Python junto con bibliotecas de álgebra lineal como NumPy y SciPy. Estas bibliotecas ofrecen funciones optimizadas y eficientes para operaciones matriciales, lo que facilita la implementación y mejora el rendimiento del solucionador.
-
-## Pruebas y Validación
-
-### Pruebas Unitarias
-
-Se han desarrollado pruebas unitarias para cada método de resolución, asegurando que cada función se comporte correctamente bajo una variedad de condiciones. Las pruebas unitarias se implementaron utilizando el framework `unittest` de Python.
-
-### Pruebas de Integración
-
-Además de las pruebas unitarias, se realizaron pruebas de integración para garantizar que todos los componentes del solucionador funcionen juntos de manera coherente y eficiente.
-
-## Uso del Solucionador
-
-### Ejecución del Programa
-
-El programa principal (`main.py`) permite al usuario introducir un sistema de ecuaciones lineales y seleccionar el método de resolución deseado. A continuación se muestra un ejemplo de cómo ejecutar el programa:
-
-### Métodos Disponibles
-
-El programa incluye los siguientes métodos de resolución:
-
-- **Eliminación Gaussiana**
-- **Factorización LU**
-- **Método de Jacobi**
-- **Método de Gauss-Seidel**
-
-Cada uno de estos métodos puede ser seleccionado y ejecutado desde la interfaz del programa, proporcionando una solución precisa al sistema de ecuaciones ingresado.
-
-## Conclusiones
-
-Este proyecto ha desarrollado un solucionador robusto y eficiente para sistemas de ecuaciones lineales, implementando varios métodos avanzados de resolución. A través del uso de Python y bibliotecas especializadas, hemos asegurado la precisión, flexibilidad y eficiencia del solucionador. El uso de GitHub y Git ha facilitado la gestión del proyecto, permitiendo una colaboración efectiva y un control de versiones detallado.
-
-```bash
-python main.py
+2. **Inversa de una Matriz usando el Método de Gauss-Jordan**:
+g++ -o inversa_gauss_jordan inversa_gauss_jordan.cpp
+./inversa_gauss_jordan
+3. **Descomposición LU de una Matriz**:
+g++ -o descomposicion_lu descomposicion_lu.cpp
+./descomposicion_lu
+## Uso
+### Cálculo de la Determinante por el Método de Cofactores
+El programa solicitará el tamaño de la matriz (n x n).
+Luego, solicitará los elementos de la matriz.
+Finalmente, mostrará la determinante de la matriz.
+### Inversa de una Matriz usando el Método de Gauss-Jordan
+El programa solicitará el tamaño de la matriz (n x n).
+Luego, solicitará los elementos de la matriz.
+Si la matriz es invertible, mostrará la matriz inversa; de lo contrario, indicará que la matriz no es invertible.
+### Descomposición LU de una Matriz
+El programa solicitará el tamaño de la matriz (n x n).
+Luego, solicitará los elementos de la matriz.
+Mostrará las matrices L y U resultantes de la descomposición LU.
+## Contribución
+Las contribuciones son bienvenidas. Por favor, abra un issue o envíe un pull request para mejoras o correcciones.
