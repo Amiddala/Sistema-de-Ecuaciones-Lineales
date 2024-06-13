@@ -26,9 +26,9 @@ Este programa descompone una matriz cuadrada en dos matrices, L (inferior) y U (
 
 El proyecto contiene los siguientes archivos:
 
-- `determinante_cofactores.cpp`: Código para calcular la determinante por el método de cofactores.
-- `inversa_gauss_jordan.cpp`: Código para calcular la inversa de una matriz usando Gauss-Jordan.
-- `descomposicion_lu.cpp`: Código para realizar la descomposición LU de una matriz.
+- `determinante_cof.cpp`: Código para calcular la determinante por el método de cofactores.
+- `gauss_jordan.cpp`: Código para calcular la inversa de una matriz usando Gauss-Jordan.
+- `LU_descomposicion.cpp`: Código para realizar la descomposición LU de una matriz.
 - `README.md`: Este archivo, que proporciona una descripción del proyecto y cómo utilizar los programas.
 
 ## Cómo Utilizar
